@@ -53,8 +53,6 @@ public class DynamicDataSource extends AbstractRoutingDataSource {
         return DataSourceHolder.getDataSource();
     }
 
-
-
     @Override
     public void setTargetDataSources(Map<Object, Object> targetDataSources) {
         super.setTargetDataSources(targetDataSources);
