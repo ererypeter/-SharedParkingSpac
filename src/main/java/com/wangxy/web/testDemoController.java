@@ -3,6 +3,8 @@ package com.wangxy.web;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -19,9 +21,13 @@ public class testDemoController {
 
     @ResponseBody
     @RequestMapping(value = "/", method = RequestMethod.GET)
+    @Transactional(rollbackFor = RuntimeException.class,isolation =Isolation.REPEATABLE_READ,readOnly = false)
     public String test() {
-        return "hello world";
+        return "hello world "+testValueAnno;
     }
+
+
+
 /*
 
     public static void main(String[] args){
