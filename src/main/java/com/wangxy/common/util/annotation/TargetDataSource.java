@@ -1,4 +1,4 @@
-package com.wangxy.common.annotation;
+package com.wangxy.common.util.annotation;
 
 import java.lang.annotation.*;
 
